@@ -7,21 +7,20 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+
+// the use of every array helper - every operates on every member of the array - in the arrow function
+// it accepts two arguments one is the current value and the other is the index
 function palindrome(str) {
-
-  const rev = str.split('').reverse().join('')
-  console.log('the new string is - ',rev)
-
-  // if (rev == str){
-  //   console.log('palindrome')
-  //   return true
-  // }else{
-  //   console.log('not a palindrome')
-  //   return false
-  // }
-
-return rev===str;
+return str.split('').every((char,i) => {
+  return char === str[str.length-i-1]
+})
 }
+
+// function palindrome(str) {
+//   const rev = str.split('').reverse().join('')
+//   console.log('the new string is - ',rev)
+// return rev===str;
+// }
 
 palindrome("oleg")
 
