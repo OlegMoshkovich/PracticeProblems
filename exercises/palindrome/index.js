@@ -8,7 +8,19 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  return str.split('').reverse().join('')
+
+  const rev = str.split('').reverse().join('')
+  console.log('the new string is - ',rev)
+
+  // if (rev == str){
+  //   console.log('palindrome')
+  //   return true
+  // }else{
+  //   console.log('not a palindrome')
+  //   return false
+  // }
+
+return rev===str;
 }
 
 palindrome("oleg")
