@@ -17,11 +17,11 @@ function fizzBuzz(n) {
 
 
     if(i%3 === 0 && i%5 === 0 ){
-      console.log('fizzBuzz+++',i)
+      console.log('fizzbuzz',i)
     }else if(i%5==0){
-      console.log('buzz+++',i)
+      console.log('buzz',i)
     }else if(i%3==0){
-      console.log('fizz+++',i)
+      console.log('fizz',i)
     }else{
     console.log(i)
     }
