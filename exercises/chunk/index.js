@@ -8,24 +8,43 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {
-const iterable = Math.floor(array.length/size);
-let globalArr = [];
-for (j=0;j<iterable;j++){
-  let newArr =[]
-  for (i=0;i<size;i++){
-    newArr.push(array[0])
-    array.splice(0,1)
-  }
-  globalArr.push(newArr)
-  if(j=== iterable -1){
-    globalArr.push(array)
-  }
+
+
+function chunk(array,size){
+ const chunked = [];
+ let index =0;
+
+ while(index < array.length){
+   chunked.push(array.slice(index,index+size));
+   index = index+size;
+ }
+
+console.log('chunked array = ',chunked);
+ return chunked;
+
 }
 
-console.log('original array', array)
-console.log('global array', globalArr)
-}
+
+//did not work - the for loop is too complex for the problem
+
+// function chunk(array, size) {
+// const iterable = Math.floor(array.length/size);
+// let globalArr = [];
+// for (j=0;j<iterable;j++){
+//   let newArr =[]
+//   for (i=0;i<size;i++){
+//     newArr.push(array[0])
+//     array.splice(0,1)
+//   }
+//   globalArr.push(newArr)
+//   if(j=== iterable -1){
+//     globalArr.push(array)
+//   }
+// }
+//
+// return globalArr
+//
+// }
 
 chunk([7,6,54,4,3,3,2,2,34,4],4)
 
