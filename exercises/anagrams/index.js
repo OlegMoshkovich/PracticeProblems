@@ -7,7 +7,44 @@
 //   anagrams('rail safety', 'fairy tales') --> True
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
+//turn the string into the array and then compare the arrays to see if all of the characters match
+//word.replace(/[^\w]/g, '').toLowerCase()  --- this statement removes the puncutuation and spaced from the string
 
-function anagrams(stringA, stringB) {}
+function anagrams(stringA, stringB) {
+const firstString = convert(stringA)
+const secondString = convert(stringB)
+
+if(stringA.length != stringB.length){
+  return false
+}
+
+for (let char in firstString){
+  if (firstString[char] !== secondString[char]){
+    return false
+  }
+  console.log('true')
+  return true
+
+}
+
+
+
+return firstString
+
+}
+
+function convert (str){
+  // console.log(str)
+  const converted ={}
+  for(char of str){
+    // console.log(char)
+  converted[char] = converted[char]+1 || 1;
+
+}
+return converted
+}
+
+
+anagrams('hello', 'elloh')
 
 module.exports = anagrams;
