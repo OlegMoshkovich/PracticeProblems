@@ -9,6 +9,7 @@
 
 
 // slightly better solution with out the use of object maps
+
 function capitalize(str) {
   const newStr  = str.split(' ');
   let index = 0;
@@ -16,13 +17,12 @@ function capitalize(str) {
     newStr[index] =  word[0].toUpperCase() + word.slice(1)
     index ++;
   }
-   const capitalized = newStr.join(' ')
-  console.log(capitalized)
-  return capitalized
 
+  return newStr.join(' ')
 }
 
 // Self generated convoluted solution using object maps
+
 // function capitalize(str) {
 //   let newObj = {}
 //   let newString = []
