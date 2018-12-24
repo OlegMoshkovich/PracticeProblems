@@ -10,11 +10,7 @@
 
 // the use of every array helper - every operates on every member of the array - in the arrow function
 // it accepts two arguments one is the current value and the other is the index
-function palindrome(str) {
-return str.split('').every((char,i) => {
-  return char === str[str.length-i-1]
-})
-}
+
 
 // function palindrome(str) {
 //   const rev = str.split('').reverse().join('')
@@ -22,6 +18,15 @@ return str.split('').every((char,i) => {
 // return rev===str;
 // }
 
-palindrome("oleg")
+function palindrome(str){
+  const revStr = str.split('').reduce((rev,char)=>char+rev,'');
+  if (revStr == str){
+    return true
+  }else{
+    return false
+  }
+}
+
+console.log(palindrome("abba"))
 
 module.exports = palindrome;
