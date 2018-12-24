@@ -18,15 +18,18 @@
 // return rev===str;
 // }
 
+// function palindrome(str){
+//   const revStr = str.split('').reduce((rev,char)=>char+rev,'');
+//   return revStr === str
+// }
+
 function palindrome(str){
-  const revStr = str.split('').reduce((rev,char)=>char+rev,'');
-  if (revStr == str){
-    return true
-  }else{
-    return false
-  }
+  return str.split('').every((value, i) => {
+    return value === str[str.length-i-1];
+  })
+
 }
 
-console.log(palindrome("abba"))
+console.log(palindrome("oleg"))
 
 module.exports = palindrome;
