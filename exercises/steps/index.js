@@ -17,23 +17,40 @@
 //       '### '
 //       '####'
 
+
+//Recursion solution -- think about the base case -- when function is called again make sure to change the arguments
+
 function steps(n){
-  let arr = []
-  let str
+  let str = ' '
 
-  for (let row=0;row<n;row++){
-    let stair ='';
-    for(let column = 0; column<n; column++){
-      if (column<= row){
-        stair += '#'
-      }else{
-        stair += ' '
-      }
-    }
-      console.log(stair)
-
+  if(n === 0){
+    return;
+  }else{
+    str += '#'
   }
+
+  console.log('the number is n',str)
+  steps(n-1);
 }
+
+
+
+// function steps(n){
+//   let arr = []
+//   let str
+//
+//   for (let row=0;row<n;row++){
+//     let stair ='';
+//     for(let column = 0; column<n; column++){
+//       if (column<= row){
+//         stair += '#'
+//       }else{
+//         stair += ' '
+//       }
+//     }
+//       console.log(stair)
+//   }
+// }
 
 steps(20)
 
