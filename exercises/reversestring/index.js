@@ -16,11 +16,20 @@
 //   return newStr
 // }
 
+// function reverse(str){
+//   debugger;
+//   return str.split('').reverse().join('');
+// }
+//
+// reverse('hello');
+
+
 function reverse(str){
   debugger;
-  return str.split('').reverse().join('');
+  return str.split('').reduce((rev,char) => char + rev,'')
 }
 
-reverse('hello');
+
+console.log(reverse("what is going on "));
 
 module.exports = reverse;

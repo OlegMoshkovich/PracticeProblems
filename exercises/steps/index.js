@@ -25,9 +25,8 @@ function steps(n){
 
   if(n === 0){
     return;
-  }else{
-    str += '#'
   }
+
 
   console.log('the number is n',str)
   steps(n-1);
