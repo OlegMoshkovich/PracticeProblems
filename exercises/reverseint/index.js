@@ -8,16 +8,14 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+// function reverseInt(n){
+//   const newNumber =
+//   parseInt(n.toString().split('').reverse().join(''))
+//   console.log(newNumber*Math.sign(n))
+//   return newNumber*Math.sign(n)
+// }
 
-
-function reverseInt(n){
-  const newNumber =
-  parseInt(n.toString().split('').reverse().join(''))
-  console.log(newNumber*Math.sign(n))
-  return newNumber*Math.sign(n)
-}
-
-reverseInt(-1800);
+// reverseInt(-1800);
 
 // function reverseInt(n) {
 // let newNum = 0;
@@ -31,5 +29,12 @@ reverseInt(-1800);
 // }
 //
 // reverseInt(874568374560000);
+
+
+function reverseInt(n){
+console.log(n.toString().split('').reverse().join(''))
+}
+
+reverseInt(874568374560000);
 
 module.exports = reverseInt;

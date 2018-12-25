@@ -23,13 +23,25 @@
 //   return revStr === str
 // }
 
-function palindrome(str){
-  return str.split('').every((value, i) => {
-    return value === str[str.length-i-1];
-  })
+// function palindrome(str){
+//   return str.split('').every((value, i) => {
+//     return value === str[str.length-i-1];
+//   })
+//
+// }
 
+// function palindrome(str){
+//   let rev = str.split('').reverse().join('')
+//   return rev === str;
+// }
+
+function palindrome(str){
+  return str.split('').every((char,i)=>{
+      return char === str[str.length-1-i]
+  })
 }
 
-console.log(palindrome("oleg"))
+
+console.log(palindrome("hssh"))
 
 module.exports = palindrome;

@@ -39,8 +39,12 @@
 
 function reverse(array){
   let total=0;
-  return array.reduce((total, amount)=>{
-    return total + amount
+  return array.reduce((total, amount, i)=>{
+    if (i%2){
+    return total + amount + 10
+  }else{
+    return total
+  }
   })
 }
 
