@@ -24,12 +24,27 @@
 // reverse('hello');
 
 
-function reverse(str){
-  debugger;
-  return str.split('').reduce((rev,char) => char + rev,'')
+// function reverse(str){
+//   debugger;
+//   return str.split('').reduce((rev,char) => char + rev,'')
+// }
+
+
+// function reverse(str){
+//   let rev = ''
+//   return str.split('').reduce((rev,char)=>{
+//     return char + rev
+//   },'')
+// }
+
+function reverse(array){
+  let total=0;
+  return array.reduce((total, amount)=>{
+    return total + amount
+  })
 }
 
-
-console.log(reverse("what is going on "));
+console.log(reverse([2,3,4,6,7]));
+// console.log(reverse("what is going on "));
 
 module.exports = reverse;
