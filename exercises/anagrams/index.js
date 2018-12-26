@@ -10,41 +10,48 @@
 //turn the string into the array and then compare the arrays to see if all of the characters match
 //word.replace(/[^\w]/g, '').toLowerCase()  --- this statement removes the puncutuation and spaced from the string
 
-function anagrams(stringA, stringB) {
-const firstString = convert(stringA)
-const secondString = convert(stringB)
+// function anagrams(stringA, stringB) {
+// const firstString = convert(stringA)
+// const secondString = convert(stringB)
+//
+// if(stringA.length != stringB.length){
+//   return false
+// }
+//
+// for (let char in firstString){
+//   if (firstString[char] !== secondString[char]){
+//     return false
+//   }
+//   console.log('true')
+//   return true
+//
+// }
 
-if(stringA.length != stringB.length){
-  return false
-}
-
-for (let char in firstString){
-  if (firstString[char] !== secondString[char]){
-    return false
+function convert(str){
+  const chars = {}
+  for (let char of str){
+    chars[char] = chars[char]+1 || 1
   }
-  console.log('true')
-  return true
+  return chars
+}
+function anagrams(stringA, stringB) {
+  const stringFirst = stringA.replace(/[^\w]/g,"").toLowerCase();// using regular expressions
+  const stringSecond = stringB.replace(/[^\w]/g,"").toLowerCase();
+  charsA = convert(stringFirst)
+  charsB = convert(stringSecond)
+  if (stringFirst.length === stringSecond.length){
+    for (let elem in charsA){
+      if(charsA[elem] !== charsB[elem]){
+        return console.log(false);
+      }
+    }
+  }else{
+    return console.log(false);
+  }
 
+  return console.log(true);
 }
 
-
-
-return firstString
-
-}
-
-function convert (str){
-  // console.log(str)
-  const converted ={}
-  for(char of str){
-    // console.log(char)
-  converted[char] = converted[char]+1 || 1;
-
-}
-return converted
-}
-
-
-anagrams('hello', 'elloh')
+anagrams('hellos', 'elloh')
 
 module.exports = anagrams;

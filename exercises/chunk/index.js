@@ -24,31 +24,31 @@
 //
 // }
 
-// function chunk(array,size){
-// let globalArr = [];
-//
-// for(let element of array){
-//     let last = globalArr[globalArr.length-1];
-//     if(!last || last.length === size){
-//       globalArr.push([element])
-//     }else{
-//       last.push(element)
-//     }
-//   }
-//   return globalArr
-// }
+function chunk(array,size){
+let globalArr = [];
+for(let element of array){
+    let last = globalArr[globalArr.length-1];
+    if(!last || last.length === size){
+      globalArr.push([element])
+    }else{
+      last.push(element)
+    }
+  }
+  return globalArr;
+}
+
+
 
 function chunk(array,size){
  const globalArr = [];
  let index = 0;
-
  while(index < array.length){
    globalArr.push(array.slice(index,index+size));
    index += size;
  }
- console.log(globalArr)
 return globalArr;
 }
+
 //did not work - the for loop is too complex for the problem
 
 // function chunk(array, size) {
