@@ -10,21 +10,45 @@
 
 
 
+// function chunk(array,size){
+//  const chunked = [];
+//  let index =0;
+//
+//  while(index < array.length){
+//    chunked.push(array.slice(index,index+size));
+//    index = index+size;
+//  }
+//
+// console.log('chunked array = ',chunked);
+//  return chunked;
+//
+// }
+
+// function chunk(array,size){
+// let globalArr = [];
+//
+// for(let element of array){
+//     let last = globalArr[globalArr.length-1];
+//     if(!last || last.length === size){
+//       globalArr.push([element])
+//     }else{
+//       last.push(element)
+//     }
+//   }
+//   return globalArr
+// }
+
 function chunk(array,size){
- const chunked = [];
- let index =0;
+ const globalArr = [];
+ let index = 0;
 
  while(index < array.length){
-   chunked.push(array.slice(index,index+size));
-   index = index+size;
+   globalArr.push(array.slice(index,index+size));
+   index += size;
  }
-
-console.log('chunked array = ',chunked);
- return chunked;
-
+ console.log(globalArr)
+return globalArr;
 }
-
-
 //did not work - the for loop is too complex for the problem
 
 // function chunk(array, size) {

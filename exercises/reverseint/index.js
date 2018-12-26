@@ -32,13 +32,8 @@
 
 
 function reverseInt(n){
-  let rev;
-  if (n<0){
-    rev = parseInt(n.toString().split('').reverse().join(''))*(-1)
-  }else{
-    rev = parseInt(n.toString().split('').reverse().join(''))
-  }
-  return rev
+  let rev=parseInt(n.toString().split('').reverse().join(''))
+  return rev * Math.sign(n)
 
 }
 

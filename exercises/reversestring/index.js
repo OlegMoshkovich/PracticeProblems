@@ -37,18 +37,25 @@
 //   },'')
 // }
 
-function reverse(array){
-  let total=0;
-  return array.reduce((total, amount, i)=>{
-    if (i%2){
-    return total + amount + 10
-  }else{
-    return total
-  }
-  })
-}
+// function reverse(array){
+//   let total=0;
+//   return array.reduce((total, amount, i)=>{
+//     if (i%2){
+//     return total + amount + 10
+//   }else{
+//     return total
+//   }
+//   })
+// }
 
-console.log(reverse([2,3,4,6,7]));
-// console.log(reverse("what is going on "));
+function reverse(str){
+  return str.split('').reduce((accu, cur)=>{
+    return cur + accu
+  },'')
+
+  }
+
+// console.log(reverse([2,3,4,6,7]));
+console.log(reverse(" and so it works"));
 
 module.exports = reverse;
