@@ -20,20 +20,42 @@
 
 //Recursion solution -- think about the base case -- when function is called again make sure to change the arguments
 
-function steps(n){
-for(let i=1;i<n+1;i++){
-  let arr = [];
-  for (j=0;j<n+1;j++){
-    if(j<i){
-      arr.push('#')
-    }else{
-      arr.push('_')
-    }
+function steps(n, row = 0, stair = ''){
+//base case
+  if (n === row){
+    return
   }
-  console.log(arr.join(''))
+
+  if (n===stair.length){
+    console.log(stair)
+    return steps(n,row+1)
+  }
+
+  if(stair.length<=row){
+    stair += '#';
+  }else{
+    stair += ' ';
+  }
+
+steps(n,row,stair);
+
 }
-return
-}
+
+
+// function steps(n){
+// for(let i=1;i<n+1;i++){
+//   let arr = [];
+//   for (j=0;j<n+1;j++){
+//     if(j<i){
+//       arr.push('#')
+//     }else{
+//       arr.push('_')
+//     }
+//   }
+//   console.log(arr.join(''))
+// }
+// return
+// }
 
 
 
