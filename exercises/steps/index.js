@@ -20,25 +20,35 @@
 
 //Recursion solution -- think about the base case -- when function is called again make sure to change the arguments
 
-function steps(n, row = 0, stair = ''){
-//base case
+function steps(n,row = 0, stair = ''){
   if (n === row){
     return
   }
 
-  if (n===stair.length){
+  if (n === stair.length){
     console.log(stair)
     return steps(n,row+1)
   }
 
-  if(stair.length<=row){
-    stair += '#';
+  if(stair.length <= row){
+    stair += '#'
   }else{
-    stair += ' ';
+    stair += '_'
   }
+  //call steps with n is the number of symbols in the array
+  // if(stair.length<row){
+  //   stair.push('#');
+  // }else{
+  //   stair.push('_');
+  // }
+  //each time the function is called
+  //if some condition push '#' into the array
 
-steps(n,row,stair);
+  //if some other condition push '_' into the array
+  //if the function executed n times return -- base case
+  //if the number of times the function is executed is not yet met call the function again
 
+  steps(n, row, stair)
 }
 
 
