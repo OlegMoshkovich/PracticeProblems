@@ -21,14 +21,14 @@
 //Recursion solution -- think about the base case -- when function is called again make sure to change the arguments
 
 function steps(n){
-
 for(let i=1;i<n+1;i++){
   let arr = [];
-  for (j=0;j<i;j++){
-    arr.push("#");
-  }
-  for(m=i+1;m<n+1;m++){
-    arr.push('_')
+  for (j=0;j<n+1;j++){
+    if(j<i){
+      arr.push('#')
+    }else{
+      arr.push('_')
+    }
   }
   console.log(arr.join(''))
 }
