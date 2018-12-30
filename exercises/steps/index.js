@@ -21,15 +21,18 @@
 //Recursion solution -- think about the base case -- when function is called again make sure to change the arguments
 
 function steps(n){
-  let str = ' '
 
-  if(n === 0){
-    return;
+for(let i=1;i<n+1;i++){
+  let arr = [];
+  for (j=0;j<i;j++){
+    arr.push("#");
   }
-
-
-  console.log('the number is n',str)
-  steps(n-1);
+  for(m=i+1;m<n+1;m++){
+    arr.push('_')
+  }
+  console.log(arr.join(''))
+}
+return
 }
 
 

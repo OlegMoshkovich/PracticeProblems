@@ -22,20 +22,31 @@
 // }
 
 
-function capitalize(str) {
-const words = str.split(' ')
-const capArr = []
 
-for (word of words){
-  // take each word - split it into characters
-  const newWord = word.split('');
-  // take first character of the word capitaliza it
-  newWord[0] = newWord[0].toUpperCase();
-  // join the letters back into the word
-  capArr.push(newWord.join(''))
+function capitalize(str) {
+  const arrCapital =[];
+  for(word of str.split(' ')){
+    arrCapital.push(word[0].toUpperCase() + word.slice(1))
+  }
+  return console.log(arrCapital.join(' '))
 }
-return console.log(capArr.join(' '));
-}
+
+// function capitalize(str) {
+//   const words = str.split(' ')
+//   const capArr = []
+//
+//   for (word of words){
+//     // take each word - split it into characters
+//     const newWord = word.split('');
+//     // take first character of the word capitaliza it
+//     if(newWord[1]){
+//     newWord[1] = newWord[1].toUpperCase();
+//     }
+//     // join the letters back into the word
+//     capArr.push(newWord.join(''))
+//   }
+//   return console.log(capArr.join(' '));
+// }
 
 
 // Self generated convoluted solution using object maps
