@@ -30,25 +30,8 @@ function steps(n,row = 0, stair = ''){
     return steps(n,row+1)
   }
 
-  if(stair.length <= row){
-    stair += '#'
-  }else{
-    stair += '_'
-  }
-  //call steps with n is the number of symbols in the array
-  // if(stair.length<row){
-  //   stair.push('#');
-  // }else{
-  //   stair.push('_');
-  // }
-  //each time the function is called
-  //if some condition push '#' into the array
-
-  //if some other condition push '_' into the array
-  //if the function executed n times return -- base case
-  //if the number of times the function is executed is not yet met call the function again
-
-  steps(n, row, stair)
+  const add = stair.length <= row ? '#':'_';
+  steps(n, row, stair+add)
 }
 
 
