@@ -10,16 +10,33 @@
 
 // slightly better solution with out the use of object maps
 
-function capitalize(str) {
-  const newStr  = str.split(' ');
-  let index = 0;
-  for(word of newStr){
-    newStr[index] =  word[0].toUpperCase() + word.slice(1)
-    index ++;
-  }
+// function capitalize(str) {
+//   const newStr  = str.split(' ');
+//   let index = 0;
+//   for(word of newStr){
+//     newStr[index] =  word[0].toUpperCase() + word.slice(1)
+//     index ++;
+//   }
+//
+//   return newStr.join(' ')
+// }
 
-  return newStr.join(' ')
+
+function capitalize(str) {
+const words = str.split(' ')
+const capArr = []
+
+for (word of words){
+  // take each word - split it into characters
+  const newWord = word.split('');
+  // take first character of the word capitaliza it
+  newWord[0] = newWord[0].toUpperCase();
+  // join the letters back into the word
+  capArr.push(newWord.join(''))
 }
+return console.log(capArr.join(' '));
+}
+
 
 // Self generated convoluted solution using object maps
 
@@ -42,6 +59,6 @@ function capitalize(str) {
 //   return newStringJoined
 // }
 
-capitalize("I am here again");
+capitalize("I am here again!");
 
 module.exports = capitalize;
