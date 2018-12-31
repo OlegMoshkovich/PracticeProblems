@@ -14,7 +14,7 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
+function pyramid(n) {\
 let string = '';
 let midpoint = Math.floor((2*n-1)/2);
 
