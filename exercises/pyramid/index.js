@@ -15,34 +15,53 @@
 //       '#####'
 
 function pyramid(n) {
-
 let string = '';
-let row = 0;
-let cols = (n-1)*2+1;
-let m = 0;
+let midpoint = Math.floor((2*n-1)/2);
 
-for(let i=1;i<n+1;i++){
+for(let row=0; row<n; row++){
   let string = '';
-
-
-  for(let j=0;j<cols;j++){
-    if(j < Math.floor(cols/2)-m ) {
-        string += "_";
-      }else if(j < Math.floor(cols/2)+1){
-        string += '#';
-    }else if(j > Math.floor(cols/2)+m){
-      string += '_';
-    }else{
-      string += "#";
+  for (let column = 0; column<2*n-1; column++){
+      if (midpoint-row <= column && midpoint+row >= column){
+        string += '#'
+      }else{
+        string += '_'
+      }
     }
-  }
-  m++;
-
-  console.log(string)
+    console.log(string)
   }
 }
 
-pyramid(800)
+pyramid(20)
 
 
 module.exports = pyramid;
+
+// My solution
+// function pyramid(n) {
+//
+// let string = '';
+// let row = 0;
+// let cols = (n-1)*2+1;
+// let m = 0;
+// let midpoint = Math.floor(cols/2);
+//
+// for(let i=1;i<n+1;i++){
+//   let string = '';
+//
+//
+//   for(let j=0;j<cols;j++){
+//     if(j < midpoint-m ) {
+//         string += "_";
+//       }else if(j === midpoint){
+//         string += '#';
+//     }else if(j > midpoint + m){
+//       string += '_';
+//     }else{
+//       string += "#";
+//     }
+//   }
+//   m++;
+//
+//   console.log(string)
+//   }
+// }
