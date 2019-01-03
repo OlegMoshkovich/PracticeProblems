@@ -20,19 +20,23 @@
 
 //Recursion solution -- think about the base case -- when function is called again make sure to change the arguments
 
+
 function steps(n,row = 0, stair = ''){
-  if (n === row){
-    return
-  }
 
-  if (n === stair.length){
-    console.log(stair)
-    return steps(n,row+1)
-  }
-
-  const add = stair.length <= row ? '#':'_';
-  steps(n, row, stair+add)
+//base case
+if (n===row){
+  return
 }
+//row switch
+if(stair.length === n){
+  console.log(stair);
+  return steps(n,row+1)
+}
+
+const add = stair.length <= row ? '#':'_'
+steps(n,row,stair+add)
+}
+
 
 
 // function steps(n){
@@ -72,3 +76,17 @@ function steps(n,row = 0, stair = ''){
 steps(20)
 
 module.exports = steps;
+
+// function steps(n,row = 0, stair = ''){
+//   if (n === row){
+//     return
+//   }
+//
+//   if (n === stair.length){
+//     console.log(stair)
+//     return steps(n,row+1)
+//   }
+//
+//   const add = stair.length <= row ? '#':'_';
+//   steps(n, row, stair+add)
+// }
