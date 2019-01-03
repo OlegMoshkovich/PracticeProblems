@@ -26,28 +26,31 @@
 
 function chunk(array,size){
 let globalArr = [];
-for(let element of array){
-    let last = globalArr[globalArr.length-1];
-    if(!last || last.length === size){
-      globalArr.push([element])
-    }else{
-      last.push(element)
-    }
+for(char of array){
+  let last = globalArr[globalArr.length-1]
+  console.log(globalArr)
+  if(!last || last.length === size){
+    globalArr.push([])
+  }else{
+    last.push(char)
   }
+}
+
   return globalArr;
 }
 
 
 
-function chunk(array,size){
- const globalArr = [];
- let index = 0;
- while(index < array.length){
-   globalArr.push(array.slice(index,index+size));
-   index += size;
- }
-return globalArr;
-}
+//
+// function chunk(array,size){
+//  const globalArr = [];
+//  let index = 0;
+//  while(index < array.length){
+//    globalArr.push(array.slice(index,index+size));
+//    index += size;
+//  }
+// return globalArr;
+// }
 
 //did not work - the for loop is too complex for the problem
 
@@ -73,3 +76,15 @@ return globalArr;
 chunk([7,6,54,4,3,3,2,2,34,4],4)
 
 module.exports = chunk;
+// function chunk(array,size){
+// let globalArr = [];
+// for(let element of array){
+//     let last = globalArr[globalArr.length-1];
+//     if(!last || last.length === size){
+//       globalArr.push([element])
+//     }else{
+//       last.push(element)
+//     }
+//   }
+//   return globalArr;
+// }

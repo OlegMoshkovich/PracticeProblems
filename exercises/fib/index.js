@@ -11,7 +11,6 @@
 
 function memoized(fn){
   const cache = {};
-  
   return function(...args){
     if (cache[args]){
       return chache[args];
@@ -27,14 +26,15 @@ function slowFib(n) {
   }
   return fib(n-1)+fib(n-2)
 }
-const fib = memoized(slowFib);
+
+fib = memoized(fib);
 fib(10);
 module.exports = fib;
 
 // function fib(n) {
 //   let fibArr = [0,1];
 //   for (i=2;i<=n;i++){
-//     const a = fibArr[i-1]
+//     const a = fibArr[i-1]t
 //     const b = fibArr[i-2]
 //     fibArr[i]=a+b
 //   }
