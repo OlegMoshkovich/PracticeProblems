@@ -13,7 +13,6 @@
 //     q.remove(); // returns 2
 
 const Stack = require('./stack');
-
 class Queue {
   constructor(){
     this.firstStack = new Stack();
@@ -31,7 +30,6 @@ class Queue {
       this.firstStack.push(this.firstStack.pop());
     }
     return record
-
   }
   peek(){
     while(this.firstStack.peek()){
@@ -43,7 +41,6 @@ class Queue {
    }
    return record;
   }
-
 }
 
 
