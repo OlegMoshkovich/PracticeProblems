@@ -50,10 +50,21 @@ class Tree {
       //   arr.push(child);
       // }
       fn(node)
-
     }
   }
-
+  traverseDF(fn){
+    const arr = [this.root]
+    while(arr.length !== 0){
+      const node = arr.shift();
+      //es6 spread operator implimentation
+      arr.unshift(...node.children)
+      // //classing for loop implimentation
+      // for(let child of node.children){
+      //   arr.push(child);
+      // }
+      fn(node)
+    }
+  }
 
 }
 
