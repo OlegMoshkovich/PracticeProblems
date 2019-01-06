@@ -10,7 +10,26 @@
 // on the tree class.  Each method should accept a
 // function that gets called with each element in the tree
 
-class Node {}
+class Node {
+  constructor(data){
+    this.data = data;
+    this.children =[];
+  }
+  add(data){
+    this.children.push(new Node(data))
+  }
+  remove(data){
+    let counter = 0
+    // use the for loop
+    for(let child of this.children){
+      if (child.data === data){
+        return this.children.splice(counter,1)
+      }
+      counter ++;
+    }
+
+  }
+}
 
 class Tree {}
 
