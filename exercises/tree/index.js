@@ -19,14 +19,18 @@ class Node {
     this.children.push(new Node(data))
   }
   remove(data){
-    let counter = 0
-    // use the for loop
-    for(let child of this.children){
-      if (child.data === data){
-        return this.children.splice(counter,1)
-      }
-      counter ++;
-    }
+    //remove with the filter helper
+    this.children = this.children.filter( element => {
+      return element.data !== data;
+    })
+    // // use the for loop
+    // let counter = 0
+    // for(let child of this.children){
+    //   if (child.data === data){
+    //     return this.children.splice(counter,1)
+    //   }
+    //   counter ++;
+    // }
 
   }
 }
