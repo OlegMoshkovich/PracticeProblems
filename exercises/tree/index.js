@@ -31,10 +31,30 @@ class Node {
     //   }
     //   counter ++;
     // }
-
   }
 }
 
-class Tree {}
+class Tree {
+  constructor(){
+    // when the tree is created the root property is empty
+    this.root = null;
+  }
+  traverseBF(fn){
+    const arr = [this.root]
+    while(arr.length !== 0){
+      const node = arr.shift();
+      //es6 spread operator implimentation
+      arr.push(...node.children)
+      // //classing for loop implimentation
+      // for(let child of node.children){
+      //   arr.push(child);
+      // }
+      fn(node)
+
+    }
+  }
+
+
+}
 
 module.exports = { Tree, Node };
